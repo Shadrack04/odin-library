@@ -15,7 +15,25 @@
     <input type="radio" name="read" id="true" value="true">
     <label for="false">False</label>
     <input type="radio" name="read" id="false" value="false">
+
+    <button class="btn">Submit</button>
   </form>
+
+  <div>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>No. of Pages</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Dynamically injected -->
+      </tbody>
+    </table>
+  </div>
 
   <script src="app.js"></script>
 </body>
