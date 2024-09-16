@@ -11,41 +11,60 @@
   <header>
     <nav>
       <div class="title">
-        <h1>LIBRARY</h1>
+        <h1 class="logo">LIBRARY</h1>
       </div>
       <ul class="links">
-        <li><a href="#">Log in</a></li>
-        <li><a href="#">Sign up</a></li>
+        <li class="link"><a href="#">Log in</a></li>
+        <li class="link"><a href="#">Sign up</a></li>
       </ul>
     </nav>
   </header>
-  <form action="#">
-    <input type="text" id="title" placeholder="Title"><br>
-    <input type="text" id="author" placeholder="Author"><br>
-    <input type="number" id="number-of-pages" placeholder="Number of pages"><br>
-    <label for="true">True</label>
-    <input type="radio" name="read" id="true" value="true">
-    <label for="false">False</label>
-    <input type="radio" name="read" id="false" value="false">
+  <main>
+    <div class="modal-btn-container">
+      <button class="modal-btn">+</button>
+    </div>
+    <div class="modal-container">
+      <div class="form-header">
+        <h2>Register a Book</h2>
+      </div>
+      <form action="#">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" placeholder="Title"><br>
 
-    <button class="btn">Submit</button>
-  </form>
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" placeholder="Author"><br>
 
-  <div>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Author</th>
-          <th>No. of Pages</th>
-          <th>Read</th>
-        </tr>
-      </thead>
-      <tbody id="table-body">
-        <!-- Dynamically injected -->
-      </tbody>
-    </table>
-  </div>
+        <label for="number-of-pages">No. of Pages:</label><br>
+        <input type="number" id="number-of-pages" placeholder="Number of pages"><br>
+
+        <p>Have you read it?</p>
+        <div class="boolean">
+          <label for="true">Yes</label>
+        <input type="radio" name="read" id="true" value="true">
+        <label for="false">No</label>
+        <input type="radio" name="read" id="false" value="false">
+        </div>
+    
+        <button class="btn">Submit</button>
+      </form>
+    </div>
+  
+    <div>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>No. of Pages</th>
+            <th>Read</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Dynamically injected -->
+        </tbody>
+      </table>
+    </div>
+  </main>
 
   <script src="app.js"></script>
 </body>

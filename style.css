@@ -3,3 +3,119 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: #dbeafe;
+}
+
+header {
+  width: 70%;
+  height: 60px;
+  border: 1px solid red;
+  margin: 0 auto;
+}
+
+nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.logo {
+  color: #172554;
+}
+
+.links {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  list-style: none;
+  border-radius: 5px;
+}
+.link a {
+  margin: 10px;
+  background-color: #1d4ed8;
+  padding: 5px 15px;
+  color: #eff6ff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  border-radius: 5px;
+}
+.link a:hover {
+  background-color: #172554;
+  color: #eff6ff;
+  border: 1px solid #1d4ed8;
+}
+
+main {
+  position: relative;
+  height: calc(100vh - 60px);
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px 50px;
+  background-color: #eff6ff;
+}
+.modal-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal-btn {
+  padding:3px;
+  font-size: 1.2rem;
+  color: #172554;
+}
+
+.modal-container {
+  height: 400px;
+  width: 300px;
+  position: absolute;
+  transform: translateX(75%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #1d4ed8;
+  padding: 30px 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-header h2 {
+  color: #1d4ed8;
+}
+
+#title, #author, #number-of-pages {
+  all: unset;
+  padding: 5px 10px;
+  background-color: #dbeafe;
+  border: 1px solid #172554;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.boolean {
+  margin-bottom: 10px;
+}
+.btn {
+  all: unset;
+  padding: 8px;
+  background-color: #1d4ed8;
+  text-align: center;
+  border-radius: 5px;
+  color: #eff6ff;
+}
+.btn:hover {
+  background-color: #172554;
+  cursor: pointer;
+}
