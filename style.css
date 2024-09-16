@@ -54,7 +54,6 @@ nav {
 }
 
 main {
-  position: relative;
   height: calc(100vh - 60px);
   width: 70%;
   margin: 0 auto;
@@ -75,12 +74,15 @@ main {
   height: 400px;
   width: 300px;
   position: absolute;
-  transform: translateX(75%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 10px;
   box-shadow: 2px 2px 5px #1d4ed8;
   padding: 30px 20px;
 }
+
 
 form {
   display: flex;
