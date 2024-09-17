@@ -2,6 +2,10 @@ const title = document.getElementById('title');
 const author = document.getElementById('author');
 const pageNumber = document.getElementById('number-of-pages');
 const submitBtn = document.querySelector('.btn');
+const openModal = document.querySelector('.modal-btn');
+const closeModal = document.querySelector('.modal-close-btn');
+const modal = document.querySelector('.modal-container');
+const modalOverlay = document.querySelector('.modal-container-overlay');
 
 const myLibrary = [
   {
@@ -18,13 +22,13 @@ function Book(title, author, numberOfPages, read) {
   this.numberOfPages = numberOfPages;
   this.read = read;
 }
-Book.prototype.info = () => {
+Book.prototype.info = function info() {
   return `${this.title} by ${this.author} has ${this.numberOfPages} pages, not read yet`;
 }
 
 
 function addBookToLibrary() {
-  if(!title.value || !author.value || pageNumber.value) {
+  if(!title.value || !author.value || !pageNumber.value) {
     alert('Please fill in all the fields.');
     return;
   }
@@ -67,3 +71,13 @@ function clearInput() {
 }
 
 submitBtn.addEventListener('click', addBookToLibrary);
+displayBooks(myLibrary);
+
+openModal.addEventListener('click', () => {
+  modal.classList.remove('hidden');
+  modalOverlay.classList.remove('hidden');
+});
+closeModal.addEventListener('click', () => {
+  modal.classList.add('hidden');
+  modalOverlay.classList.add('hidden');
+});
