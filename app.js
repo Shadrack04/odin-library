@@ -49,7 +49,7 @@ function displayBooks(data) {
   data.forEach(item => {
     const tableRow = document.createElement('tr');
     const readStatus = document.createElement('button');
-    readStatus.innerText = 'Done';
+    readStatus.innerHTML = 'Done';
     const deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Del';
 
@@ -76,9 +76,10 @@ function clearInput() {
 
 }
 
-submitBtn.addEventListener('click', ()=> {
+submitBtn.addEventListener('click', (e)=> {
   addBookToLibrary();
   exitModal();
+  e.preventDefault();
 })
   
 displayBooks(myLibrary);
@@ -92,4 +93,12 @@ closeModal.addEventListener('click', exitModal);
 function exitModal() {
   modal.classList.add('hidden');
   modalOverlay.classList.add('hidden');
+}
+
+function checkRead(buttons) {
+  Array.from(buttons).forEach(button => {
+    button.addEventListener('click', (e)=> {
+      e.target.parentElement.remove();
+    })
+  })
 }
