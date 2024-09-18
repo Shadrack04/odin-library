@@ -85,7 +85,14 @@ main {
   box-shadow: 2px 2px 5px #1d4ed8;
   padding: 30px 20px;
   z-index: 1000;
+  animation: show .3s ease-in-out;
 }
+
+@keyframes show {
+  0%{transform: scale(0);}
+  100%{transform: scale(1);}
+}
+
 .modal-container-overlay {
   /* content: ""; */
   position: fixed;
@@ -95,6 +102,7 @@ main {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.379);
   z-index: 1;
+  animation: show .3s ease-in-out;
 }
 
 
