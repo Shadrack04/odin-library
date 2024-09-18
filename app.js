@@ -48,6 +48,10 @@ function displayBooks(data) {
 
   data.forEach(item => {
     const tableRow = document.createElement('tr');
+    const readStatus = document.createElement('button');
+    readStatus.innerText = 'Done';
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = 'Del';
 
     Object.values(item).forEach(value => {
       const tableData = document.createElement('td');
@@ -55,8 +59,10 @@ function displayBooks(data) {
 
       tableRow.appendChild(tableData);
     })
-
+    tableRow.insertCell().appendChild(readStatus);
+    tableRow.insertCell().appendChild(deleteBtn);
     tableBody.appendChild(tableRow);
+    
   })
 
 
