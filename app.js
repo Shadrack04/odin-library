@@ -70,14 +70,20 @@ function clearInput() {
 
 }
 
-submitBtn.addEventListener('click', addBookToLibrary);
+submitBtn.addEventListener('click', ()=> {
+  addBookToLibrary();
+  exitModal();
+})
+  
 displayBooks(myLibrary);
 
 openModal.addEventListener('click', () => {
   modal.classList.remove('hidden');
   modalOverlay.classList.remove('hidden');
 });
-closeModal.addEventListener('click', () => {
+closeModal.addEventListener('click', exitModal);
+
+function exitModal() {
   modal.classList.add('hidden');
   modalOverlay.classList.add('hidden');
-});
+}
