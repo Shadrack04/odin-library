@@ -13,6 +13,12 @@ const myLibrary = [
     author: 'James Clear',
     numberOfPages: 200,
     read: true
+  },
+  {
+    title: 'Things fall apart',
+    author: 'Chinua Achebe',
+    numberOfPages: 490,
+    read: true
   }
 ];
 
@@ -43,28 +49,38 @@ function addBookToLibrary() {
 }
 
 function displayBooks(data) {
-  const tableBody = document.getElementById('table-body');
+  const tableBody = document.querySelector('#table-body');
   tableBody.innerHTML = '';
 
-  data.forEach(item => {
+  data.forEach((item, index) => {
     const tableRow = document.createElement('tr');
-    const readStatus = document.createElement('button');
-    readStatus.innerHTML = 'Done';
-    const deleteBtn = document.createElement('button');
-    deleteBtn.innerText = 'Del';
 
+    // create a button to change the read status
+    const doneBtn = document.createElement('button');
+    doneBtn.classList.add('done-btn');
+    doneBtn.innerText = 'Done';
+
+    // create a button to remove book from array
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.innerText = 'Delete';
+
+    // create table data cell for each item property
     Object.values(item).forEach(value => {
       const tableData = document.createElement('td');
       tableData.textContent = value;
 
       tableRow.appendChild(tableData);
     })
-    tableRow.insertCell().appendChild(readStatus);
-    tableRow.insertCell().appendChild(deleteBtn);
-    tableBody.appendChild(tableRow);
-    
-  })
+    // append the two buttons doneBtn/deleteBtn
+    tableRow.insertCell(4).appendChild(doneBtn);
+    tableRow.insertCell(5).appendChild(deleteBtn);
 
+    //append the table row to the table body
+    tableBody.appendChild(tableRow);
+    checkRead(doneBtn, index);
+    deleteBook(deleteBtn, index);
+  })
 
 }
 
@@ -95,10 +111,22 @@ function exitModal() {
   modalOverlay.classList.add('hidden');
 }
 
-function checkRead(buttons) {
-  Array.from(buttons).forEach(button => {
-    button.addEventListener('click', (e)=> {
-      e.target.parentElement.remove();
-    })
+function deleteBook(button, index) {
+  button.addEventListener('click', ()=> {
+    myLibrary.splice(index, 1);
+    displayBooks(myLibrary);
+  })
+}
+
+function checkRead(button, index) {
+  button.addEventListener('click', ()=> {
+    if(myLibrary[index].read == false) {
+      myLibrary[index].read = true;
+      displayBooks(myLibrary);
+    } else {
+      myLibrary[index].read = false;
+      displayBooks(myLibrary);
+    }
+    
   })
 }
