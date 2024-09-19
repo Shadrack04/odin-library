@@ -59,8 +59,44 @@ main {
   margin: 0 auto;
   padding: 10px 50px;
   background-color: #eff6ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.table-container {
+  margin-top: 20px;
+  width: 70%;
+}
+.table-container table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 2px solid #172554;
+}
+thead th:nth-child(1), thead th:nth-child(2), thead th:nth-child(3) {
+  width: 30%;
+  height: 30px;
+}
+thead th:nth-child(4), thead th:nth-child(5), thead th:nth-child(6) {
+  width: 30%;
+  height: 30px;
+}
+
+.done-btn, .delete-btn {
+  all: unset;
+  padding:3px 8px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.delete-btn {
+  background-color: red;
+  color: black;
+}
+.done-btn {
+  color: #eff6ff;
+}
 
 
 .modal-btn-container {

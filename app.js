@@ -58,7 +58,7 @@ function displayBooks(data) {
     // create a button to change the read status
     const doneBtn = document.createElement('button');
     doneBtn.classList.add('done-btn');
-    doneBtn.innerText = 'Done';
+    doneBtnBackgroundColor(item, doneBtn);
 
     // create a button to remove book from array
     const deleteBtn = document.createElement('button');
@@ -129,4 +129,14 @@ function checkRead(button, index) {
     }
     
   })
+}
+
+function doneBtnBackgroundColor(item, doneBtn) {
+  if(item.read) {
+    doneBtn.innerText = 'Unread';
+    doneBtn.style.backgroundColor = 'red';
+  }else {
+    doneBtn.innerText = 'Read';
+    doneBtn.style.backgroundColor = 'green';
+  }
 }
